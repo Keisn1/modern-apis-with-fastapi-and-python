@@ -1,0 +1,17 @@
+* Pydantic
+
+  - *Problem* : Data validation is massive effort
+  - solve with BaseModel
+
+    #+begin_src python
+      import datetime
+      from pydantic import BaseModel
+      from typing import List, Optional
+
+      class Order(BaseModel):
+          item_id: int
+          created_date: Optional[datetime.datetime]
+          pages_visited: List[int]
+          price: float
+    #+end_src
+ 

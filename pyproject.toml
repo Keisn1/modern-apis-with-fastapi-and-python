@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "modern-apis-with-fastapi-and-python"
+version = "0.1.0"
+description = ""
+authors = ["Kesin1 <kaytravaille@googlemail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.1"
+uvicorn = "^0.15.0"
+requests = "^2.26.0"
+bs4 = "^0.0.1"
+colorama = "^0.4.4"
+httpx = "^0.19.0"
+python-dateutil = "^2.8.2"
+pydantic = "^1.8.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.8b0"
+ipython = "^7.27.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

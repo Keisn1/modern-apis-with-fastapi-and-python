@@ -1,0 +1,8 @@
+/.DS_Store
+/.mypy_cache/3.7/*.json
+/.mypy_cache/3.7/collections/*.json
+/.mypy_cache/
+/modern_apis_with_fastapi_and_python/ch03-first-api/.mypy_cache/
+/modern_apis_with_fastapi_and_python/ch04-language-foundations/.mypy_cache/
+/modern_apis_with_fastapi_and_python/ch03-first-api/__pycache__/*.pyc
+/modern_apis_with_fastapi_and_python/.DS_Store

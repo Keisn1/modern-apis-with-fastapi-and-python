@@ -1,0 +1,74 @@
+* From synchronous to asynchronous
+
+  - download html synchronously in sync_scrape
+  - then asynchronously in async_scrape
+
+    
+* How async works
+  
+** httpx
+
+   - works like requests, but supports async and await
+   - the old version with an *async* would work exactly the same way, because we
+     are *awaiting* the tasks
+
+     #+begin_src python
+       async def get_title_range_old_version():
+           # Please keep this range pretty small to not DDoS my site. ;)
+           for n in range(270, 280):
+               html = await get_html(n)
+               title = get_title(html, n)
+               print(Fore.WHITE + f"Title found: {title}", flush=True)
+     #+end_src
+
+   - first you want to create tasks from some asynchronous function
+     #+begin_src python
+       async def get_html(episode_number: int) -> str:
+           pass
+
+       async def get_title_range():
+           # Please keep this range pretty small to not DDoS my site. ;)
+
+           tasks = []
+           for n in range(270, 280):
+               tasks.append((n, loop.create_task(get_html(n))))
+     #+end_src
+
+   - then start them all and wait for them to finish
+     #+begin_src python
+       for n, t in tasks:
+           html = await t
+           title = get_title(html, n)
+           print(Fore.WHITE + f"Title found: {title}", flush=True)
+     #+end_src
+
+   - inside get_html, using httpx.AsyncClient, we have an *with asynchronous*
+     block
+     - we get back a task/or a coroutine that when finished, would give us the
+       response
+     - *await* make the program give up its execution to do anything else that
+       needs to run while we're waiting and then give me the answer when it's
+       done
+     - up to the program that while waiting we can do a bunch of other calls
+     
+
+   
+** a basic async method
+
+   - if you want a method to be asynchronous, you need to add *async*
+   - *async with*-/block/ is actually opening a network connection (a socket)
+     asynchronously, opens all the sockets at the same time
+     - then issueing the requests, but awaiting
+   
+   #+begin_src python
+     async def get_html(episode_number: int) -> str:
+         print(Fore.YELLOW + f"Getting HTML for episode {episode_number}", flush=True)
+
+         url = f"https://talkpython.fm/{episode_number}"
+
+         async with httpx.AsyncClient() as client:
+             resp = await client.get(url)
+             resp.raise_for_status()
+
+             return resp.text
+   #+end_src

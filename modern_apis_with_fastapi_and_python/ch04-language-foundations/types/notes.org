@@ -1,0 +1,4 @@
+* Variables and functions without types
+
+  - no information communicated!!!
+  

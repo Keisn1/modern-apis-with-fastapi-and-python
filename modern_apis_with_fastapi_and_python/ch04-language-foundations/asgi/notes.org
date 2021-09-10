@@ -1,0 +1,17 @@
+* What's the point?
+
+  - How can you write something and then you can host it with different hosting
+    services?
+    (Uvicorn is a lightning-fast ASGI server implementation)
+  - longest time WSGI (Web Server Gate Interface) - Gunicorn / MicroWSGI
+    (pronounced like Whisgey)
+
+  - WSGI:
+    - linear execution
+      get task
+      execute task
+      respond
+    - no concurrent thing
+
+  - ASGI:
+    - Asynchronous Server Gate Interface
