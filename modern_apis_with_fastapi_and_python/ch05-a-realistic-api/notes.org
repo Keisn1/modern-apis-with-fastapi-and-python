@@ -2,6 +2,7 @@
 
 * Using an HTML template
 
+  https://en.wikipedia.org/wiki/Template_processor
   - e.g. [[https://en.wikipedia.org/wiki/Jinja_(template_engine)][Jinja]] is a [[https://en.wikipedia.org/wiki/Web_template_system][web template engine]] for Python
   - Jinja2 is built right in (adopted from Flask; *version3 available*)
   - ability to use django/cameleon 

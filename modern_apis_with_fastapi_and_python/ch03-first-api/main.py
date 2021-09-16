@@ -1,6 +1,8 @@
 import sys
 from typing import Optional
 
+from starlette.responses import JSONResponse
+
 print(sys.path)
 import fastapi
 
@@ -26,7 +28,8 @@ def index():
 
 
 @api.get("/api/calculate")
-def calculate(x: int, y: int, z: Optional[int] = None):  # using pypint
+def calculate(x: int, y: int, z: Optional[int] = None) -> JSONResponse:  # using pypint
+
     if z is not None and z == 0:
         return fastapi.responses.JSONResponse(
             content={"error": "ERROR: Z cannot be zero."}, status_code=400
@@ -37,7 +40,7 @@ def calculate(x: int, y: int, z: Optional[int] = None):  # using pypint
     if z is not None:
         result /= z
 
-    return {"x": x, "y": y, "z": z, "result": result}
+    return JSONResponse({"x": x, "y": y, "z": z, "result": result})
 
 
 # uvicorn.run(api)
