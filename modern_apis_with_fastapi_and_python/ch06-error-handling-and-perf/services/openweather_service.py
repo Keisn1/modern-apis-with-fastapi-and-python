@@ -10,6 +10,7 @@ api_key: Optional[str] = None
 async def get_report_async(
     city: str, state: Optional[str], country: Optional[str], units: Optional[str]
 ) -> dict:
+    city, state, country, units = validate_units(city, state, country, units)
 
     if forecast := get_weather(city, state, country, units):
         return forecast
@@ -34,8 +35,8 @@ async def get_report_async(
 
 
 def validate_units(
-    city: str, state: Optional[str], country: Optional[str], units: str
-) -> Tuple[str, Optional[str], str, str]:
+    city: str, state: Optional[str], country: Optional[str], units: Optional[str]
+) -> Tuple[str, Optional[str], Optional[str], Optional[str]]:
     city = city.lower().strip()
     if not country:
         country = "us"

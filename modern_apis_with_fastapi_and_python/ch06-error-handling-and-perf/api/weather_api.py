@@ -20,3 +20,8 @@ async def weather(
         )  # report is now a coroutine
     except ValidationError as ve:
         return fastapi.Response(content=ve.error_msg, status_code=ve.status_code)
+    except Exception as x:
+        print(f"Server crashed while processing request: {x}")
+        return fastapi.Response(
+            content=" Error processing your request.", status_code=500
+        )
