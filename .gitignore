@@ -21,3 +21,5 @@
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/settings.json
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/services/__pycache__/*.pyc
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/
+/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/__pycache__/
+/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/infrastructure/__pycache__/

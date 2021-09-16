@@ -32,3 +32,7 @@
      - lots of services provide async calls now (Databases, Redis, MongoDB, even some files)
 
        
+* Chapter 6: Adding exceptions and error handling
+
+** Add caching
+
