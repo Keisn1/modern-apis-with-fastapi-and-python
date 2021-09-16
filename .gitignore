@@ -20,7 +20,4 @@
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/models/__pycache__/*.pyc
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/settings.json
 /modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/services/__pycache__/*.pyc
-/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/3.7/*.json
-/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/3.7/os/*.json
-/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/3.7/importlib/*.json
-/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/3.7/collections/*.json
+/modern_apis_with_fastapi_and_python/ch06-error-handling-and-perf/views/.mypy_cache/
