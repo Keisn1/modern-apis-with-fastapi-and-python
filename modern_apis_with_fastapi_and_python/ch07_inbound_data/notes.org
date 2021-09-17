@@ -1,0 +1,38 @@
+* Build an API and access OpenWeather with API-key
+
+* Using an HTML template
+  
+  https://en.wikipedia.org/wiki/Template_processor
+  - e.g. [[https://en.wikipedia.org/wiki/Jinja_(template_engine)][Jinja]] is a [[https://en.wikipedia.org/wiki/Web_template_system][web template engine]] for Python
+  - Jinja2 is built right in (adopted from Flask; *version3 available*)
+  - ability to use django/cameleon 
+
+* Big Keys / Takeaways, Subjects
+
+  - Using a settings.json to handle api_key, api_key globally defined
+  - using Depends to have Data validation
+  - using structure as model, api (endpoints), models (pydantic models), services (services being consumed), views (home routers, html), static (UI elements)
+  - secrets (shhgit)
+
+* Async
+
+  1. declare a method "async"
+  2. then you have to say the word "await", where you are going to wait
+  3. point 2 is not true - you have to await on a coroutine, not something like
+     a requests.Response
+  4. therfore need httpx - build an async with block with httpx.AsyncClient
+  5. need to await asynchronous methdos, to get out there value 
+  6. then declare the route you are calling async (or the method where you use
+     the await inside)
+
+  7. no need to think about event loops
+     - only say, api_method is async, then leverage async things that are
+       leveraging async api_calls
+
+     - lots of services provide async calls now (Databases, Redis, MongoDB, even some files)
+
+       
+* Chapter 6: Adding exceptions and error handling
+
+** Add caching
+
