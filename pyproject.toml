@@ -17,6 +17,7 @@ pydantic = "^1.8.2"
 Jinja2 = "^3.0.1"
 aiofiles = "^0.7.0"
 pathlib2 = "^2.3.6"
+asyncio = "^3.4.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
