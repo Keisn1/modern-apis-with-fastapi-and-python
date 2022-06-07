@@ -30,3 +30,4 @@
 /modern_apis_with_fastapi_and_python/ch07_inbound_data/views/__pycache__/
 /modern_apis_with_fastapi_and_python/ch07_inbound_data/__pycache__/
 /modern_apis_with_fastapi_and_python/ch07_inbound_data/infrastructure/__pycache__/
+/modern_apis_with_fastapi_and_python/ch07_inbound_data/api/.mypy_cache/
